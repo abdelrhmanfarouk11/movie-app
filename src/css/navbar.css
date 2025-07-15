@@ -1,0 +1,151 @@
+.navbar {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  color: var(--white-color);
+  background-color: var(--background-color);
+}
+
+.navbar-brand a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+.navbar-brand .fa-video {
+  margin: 5px 10px;
+  font-size: 20px;
+  transform: rotate(-10deg);
+  color: var(--primary-color);
+}
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+.inline-link {
+  display: flex;
+  gap: 1rem;
+}
+.nav-link {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: 0.2s ease-in-out;
+  font-weight: bold;
+  color: var(--white-color);
+}
+.nav-link p {
+  text-align: center;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.nav-link:hover .icon {
+  color: var(--warning-color);
+}
+.icon {
+  font-size: 25px;
+  transition: 0.2s ease-in-out;
+}
+.navbar .menu-bar {
+  font-size: 1.5rem;
+  margin: auto;
+  cursor: pointer;
+  display: none;
+  transition: 0.4s linear;
+  transition-delay: 0.1s;
+}
+.sidebar {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  padding: 1.5rem;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  display: none;
+}
+.sidebar hr {
+  margin: 15px 10px 20px 10px;
+}
+.rotate {
+  transform: rotate(90deg);
+  transition: transform 1s ease-in-out;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+  animation: from-left 0.3s ease-in-out;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-bar,
+.fa-x {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+.close {
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 5px;
+  position: fixed;
+  right: 30px;
+  border: 2px solid;
+  padding: 6px;
+  border-radius: 6px;
+  transition: 0.3s ease-in-out;
+}
+.close:hover {
+  background-color: white;
+  color: black;
+}
+.closed {
+  animation: return-back 0.3s ease-out;
+}
+.toggle {
+  margin: 10px;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+@keyframes from-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes return-back {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .menu-bar {
+    display: block;
+  }
+  .navbar .nav-link {
+    display: none;
+  }
+  .sidebar {
+    display: block;
+  }
+}
