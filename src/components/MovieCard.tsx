@@ -1,6 +1,6 @@
 import { useMovieContext } from "../contexts/MovieContexts.jsx";
 import { useTheme } from "../contexts/ThemeContext.js";
-import defultImg from '../assets/defult-image.jpg'
+import defultImg from "../assets/defult-image.jpg";
 interface Movie {
   id: number;
   movie_Date: string;
@@ -48,12 +48,12 @@ const MovieCard = ({ movie }: Props) => {
         />
       </div>
       <div className="movie-overlay">
-        <button
-          className={`favorite-btn ${isFavorites(movie.id) ? "active" : ""}`}
+        <i
+          className={`favorite-btn fa-solid fa-heart ${
+            isFavorites(movie.id) ? "active" : ""
+          }`}
           onClick={onFavorite}
-        >
-          ❤
-        </button>
+        ></i>
       </div>
       <div className="movie-info">
         <h3>{movie_Name}</h3>

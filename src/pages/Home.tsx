@@ -90,7 +90,7 @@ const Home = () => {
       <footer style={{ backgroundColor: isDark ? "black" : "white" }}>
         <div className="rights">
           <h3>
-            watch all your favorite movies with <span>framezone</span> all in
+            watch all your favorite movies with <span><a href="#">framezone</a></span> all in
             one place
             <i className="fa fa-flag"></i>
           </h3>
